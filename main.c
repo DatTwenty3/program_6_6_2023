@@ -408,15 +408,3 @@ __interrupt void Timer2_ISR(void)
   IWDG_KR = 0xaa;//clear watchdog
   TIM2_SR1_UIF = 0;
 }
-//Start LEDAT - Code block
-//#pragma vector = EXTI_PORTC_VECTOR
-//__interrupt void EXTI_PORTC_ISR(void)
-//{
-//    if ((PC_IDR & (1 << 4)) == 0) // Check if the button is pressed
-//    {
-//        ButtonPressHandler(); // Handle song change
-//    }
-//    // Clear the interrupt flag
-//    EXTI_SR1_P4F = 0;
-//}
-//End LEDAT - Code block
