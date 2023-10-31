@@ -86,7 +86,10 @@ void Init_Port(void)
 //  PC_DDR |= 0xE0; // PC5, PC6, PC7 are outputs. Because "PC_DDR = 0xff" before so this be commented
   PD_DDR |= 0x0E; // PD1, PD2, PD3 are outputs
   // Configure GPIO pin as an output for the buzzer
+  // Configure GPIO pin as an output for the buzzer
   PC_DDR |= 0x08; // PC3 is an output
+  PC_CR1 |= 0x08; // Clear bit 3 to enable Push-Pull on PC3
+  PC_CR2 &= 0xF7; // Clear bit 3 to disable external interrupt on PC3
   // Configure GPIO pin as an input for the button
   PC_DDR &= 0xEF; // PC4 is an input
   //Because have config for all port C before so this be commented
